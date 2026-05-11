@@ -5,6 +5,9 @@ on:
     - cron: '0 4 * * 0'  # Каждое воскресенье в 4 утра
   workflow_dispatch:       # Ручной запуск по кнопке
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   convert:
     runs-on: ubuntu-latest
