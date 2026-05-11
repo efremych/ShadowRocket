@@ -24,16 +24,17 @@ jobs:
           
           # Формат: имя|url|автор
           SOURCES="
-          exclude_ads|https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/exclude_ads.txt|efremych
-          ip-geo-detect|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ip-geo-detect.list|MetaCubeX
-          yandex|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/yandex.list|MetaCubeX
           binance|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/binance.list|MetaCubeX
-          twitch|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitch.list|MetaCubeX
-          youtube|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list|MetaCubeX
-          spotify|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.list|MetaCubeX
-          x|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/x.list|MetaCubeX
+          exclude_ads|https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/exclude_ads.txt|efremych
+          google-ads|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google%40ads.list|MetaCubeX
           google-gemini|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.list|MetaCubeX
+          ip-geo-detect|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ip-geo-detect.list|MetaCubeX
           openai|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.list|MetaCubeX
+          spotify|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.list|MetaCubeX
+          twitch|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitch.list|MetaCubeX
+          x|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/x.list|MetaCubeX
+          yandex|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/yandex.list|MetaCubeX
+          youtube|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list|MetaCubeX
           "
           
           echo "$SOURCES" | while IFS='|' read -r name url author; do
