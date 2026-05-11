@@ -168,6 +168,36 @@ jobs:
           
           echo "✓ twitch: ${TOTAL_TW}"
 
+      # ─── 6. youtube ───────────────────────────────────────────
+      - name: Download and convert youtube
+        run: |
+          mkdir -p rules
+          
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list" \
+            | tr -d '\r' \
+            | grep -v '^$' \
+            > /tmp/youtube_raw.txt
+          
+          TOTAL_YT=$(wc -l < /tmp/youtube_raw.txt)
+          YT_DOMAIN=$(grep -v '^+\.' /tmp/youtube_raw.txt | wc -l)
+          YT_SUFFIX=$(grep '^+\.' /tmp/youtube_raw.txt | wc -l)
+          
+          {
+            echo "# NAME: youtube"
+            echo "# AUTHOR: MetaCubeX (converted by efremych)"
+            echo "# REPO: https://github.com/efremych/ShadowRocket"
+            echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
+            echo "# SOURCE: https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/youtube.list"
+            echo "# DOMAIN: ${YT_DOMAIN}"
+            echo "# DOMAIN-SUFFIX: ${YT_SUFFIX}"
+            echo "# TOTAL: ${TOTAL_YT}"
+          } > rules/youtube.list
+          
+          echo "" >> rules/youtube.list
+          sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/youtube_raw.txt >> rules/youtube.list
+          
+          echo "✓ youtube: ${TOTAL_YT}"
+
       # ─── Commit ───────────────────────────────────────────────
       - name: Commit and push if changed
         run: |
