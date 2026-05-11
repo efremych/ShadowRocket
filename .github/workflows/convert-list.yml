@@ -29,6 +29,8 @@ jobs:
             > /tmp/ads_raw.txt
           
           TOTAL_ADS=$(wc -l < /tmp/ads_raw.txt)
+          ADS_DOMAIN=$(grep -v '^+\.' /tmp/ads_raw.txt | wc -l)
+          ADS_SUFFIX=$(grep '^+\.' /tmp/ads_raw.txt | wc -l)
           
           {
             echo "# NAME: exclude_ads"
@@ -36,12 +38,13 @@ jobs:
             echo "# REPO: https://github.com/efremych/ShadowRocket"
             echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
             echo "# SOURCE: https://github.com/efremych/mrs-rules/blob/main/domain/exclude_ads.txt"
-            echo "# DOMAIN-SUFFIX: ${TOTAL_ADS}"
+            echo "# DOMAIN: ${ADS_DOMAIN}"
+            echo "# DOMAIN-SUFFIX: ${ADS_SUFFIX}"
             echo "# TOTAL: ${TOTAL_ADS}"
           } > rules/exclude_ads.list
           
           echo "" >> rules/exclude_ads.list
-          sed 's/^+\./DOMAIN-SUFFIX,/' /tmp/ads_raw.txt >> rules/exclude_ads.list
+          sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/ads_raw.txt >> rules/exclude_ads.list
           
           echo "✓ exclude_ads: ${TOTAL_ADS} доменов"
 
