@@ -1,0 +1,62 @@
+name: Build IP-only rules
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Download and build IP lists
+        run: |
+          mkdir -p rules
+          
+          # Формат: имя|url|автор
+          SOURCES="
+          white_list|https://raw.githubusercontent.com/efremych/mrs-rules/main/ip_cidr/white_list.txt|efremych
+          "
+          
+          echo "$SOURCES" | while IFS='|' read -r name url author; do
+            [ -z "$name" ] && continue
+            
+            echo "::group::Обработка: ${name}"
+            
+            curl -sL "$url" | tr -d '\r' | grep -v '^$' > "/tmp/${name}_raw.txt"
+            
+            TOTAL=$(wc -l < "/tmp/${name}_raw.txt")
+            
+            {
+              echo "# NAME: ${name}"
+              echo "# AUTHOR: ${author} (converted by efremych)"
+              echo "# REPO: https://github.com/efremych/ShadowRocket"
+              echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
+              echo "# SOURCE: ${url}"
+              echo "# IP-CIDR: ${TOTAL}"
+              echo "# TOTAL: ${TOTAL}"
+            } > "rules/${name}.list"
+            
+            echo "" >> "rules/${name}.list"
+            sed 's/^/IP-CIDR,/; s/$/,no-resolve/' "/tmp/${name}_raw.txt" >> "rules/${name}.list"
+            
+            echo "✓ ${name}: ${TOTAL}"
+            echo "::endgroup::"
+          done
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add rules/
+          git diff --staged --quiet || git commit -m "Auto-update IP rules [skip ci]"
+          git push
