@@ -46,7 +46,7 @@ jobs:
           echo "" >> rules/exclude_ads.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/ads_raw.txt >> rules/exclude_ads.list
           
-          echo "✓ exclude_ads: ${TOTAL_ADS} доменов"
+          echo "✓ exclude_ads: ${TOTAL_ADS}"
 
       # ─── 2. ip-geo-detect ─────────────────────────────────────
       - name: Download and convert ip-geo-detect
@@ -76,7 +76,7 @@ jobs:
           echo "" >> rules/ip-geo-detect.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/geo_raw.txt >> rules/ip-geo-detect.list
           
-          echo "✓ ip-geo-detect: ${TOTAL_GEO} доменов"
+          echo "✓ ip-geo-detect: ${TOTAL_GEO}"
 
       # ─── 3. yandex ────────────────────────────────────────────
       - name: Download and convert yandex
@@ -106,7 +106,7 @@ jobs:
           echo "" >> rules/yandex.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/yandex_raw.txt >> rules/yandex.list
           
-          echo "✓ yandex: ${TOTAL_YA} доменов"
+          echo "✓ yandex: ${TOTAL_YA}"
 
       # ─── 4. binance ───────────────────────────────────────────
       - name: Download and convert binance
@@ -136,7 +136,37 @@ jobs:
           echo "" >> rules/binance.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/binance_raw.txt >> rules/binance.list
           
-          echo "✓ binance: ${TOTAL_BNB} доменов"
+          echo "✓ binance: ${TOTAL_BNB}"
+
+      # ─── 5. twitch ────────────────────────────────────────────
+      - name: Download and convert twitch
+        run: |
+          mkdir -p rules
+          
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitch.list" \
+            | tr -d '\r' \
+            | grep -v '^$' \
+            > /tmp/twitch_raw.txt
+          
+          TOTAL_TW=$(wc -l < /tmp/twitch_raw.txt)
+          TW_DOMAIN=$(grep -v '^+\.' /tmp/twitch_raw.txt | wc -l)
+          TW_SUFFIX=$(grep '^+\.' /tmp/twitch_raw.txt | wc -l)
+          
+          {
+            echo "# NAME: twitch"
+            echo "# AUTHOR: MetaCubeX (converted by efremych)"
+            echo "# REPO: https://github.com/efremych/ShadowRocket"
+            echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
+            echo "# SOURCE: https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/twitch.list"
+            echo "# DOMAIN: ${TW_DOMAIN}"
+            echo "# DOMAIN-SUFFIX: ${TW_SUFFIX}"
+            echo "# TOTAL: ${TOTAL_TW}"
+          } > rules/twitch.list
+          
+          echo "" >> rules/twitch.list
+          sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/twitch_raw.txt >> rules/twitch.list
+          
+          echo "✓ twitch: ${TOTAL_TW}"
 
       # ─── Commit ───────────────────────────────────────────────
       - name: Commit and push if changed
