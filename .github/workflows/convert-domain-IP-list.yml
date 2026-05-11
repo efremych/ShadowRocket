@@ -1,4 +1,4 @@
-name: Build Telegram rules (domains + IP)
+name: Build domains+IP rules
 
 on:
   schedule:
