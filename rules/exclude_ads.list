@@ -1,8 +1,9 @@
 # NAME: exclude_ads
-# AUTHOR: efremych
+# AUTHOR: efremych (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-05-11 18:20:55
-# SOURCE: https://github.com/efremych/mrs-rules/blob/main/domain/exclude_ads.txt
+# UPDATED: 2026-05-11 20:22:27
+# SOURCE: https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/exclude_ads.txt
+# DOMAIN: 0
 # DOMAIN-SUFFIX: 5
 # TOTAL: 5
 

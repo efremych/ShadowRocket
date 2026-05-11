@@ -1,0 +1,79 @@
+# NAME: custom
+# AUTHOR: efremych (converted by efremych)
+# REPO: https://github.com/efremych/ShadowRocket
+# UPDATED: 2026-05-11 20:22:27
+# SOURCE: https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/custom.txt
+# DOMAIN: 0
+# DOMAIN-SUFFIX: 70
+# TOTAL: 70
+
+DOMAIN-SUFFIX,4pda.ru
+DOMAIN-SUFFIX,4pda.to
+DOMAIN-SUFFIX,amnezia.org
+DOMAIN-SUFFIX,amneziavpn.org
+DOMAIN-SUFFIX,bitrefill.com
+DOMAIN-SUFFIX,bosch.com
+DOMAIN-SUFFIX,bosch-home.com
+DOMAIN-SUFFIX,carnivalmobile.com
+DOMAIN-SUFFIX,cdn.perfops.net
+DOMAIN-SUFFIX,cdn-magiclinks.trackonomics.net
+DOMAIN-SUFFIX,chess.com
+DOMAIN-SUFFIX,coingate.com
+DOMAIN-SUFFIX,coinsbee.com
+DOMAIN-SUFFIX,cryptorefills.com
+DOMAIN-SUFFIX,d3js.org
+DOMAIN-SUFFIX,dell.com
+DOMAIN-SUFFIX,dnsperf.com
+DOMAIN-SUFFIX,ebalka.video
+DOMAIN-SUFFIX,elfhosted.com
+DOMAIN-SUFFIX,fandango.com
+DOMAIN-SUFFIX,fap-guru.site
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,goodreads.com
+DOMAIN-SUFFIX,habr.com
+DOMAIN-SUFFIX,habrastorage.org
+DOMAIN-SUFFIX,host.io
+DOMAIN-SUFFIX,hostup.se
+DOMAIN-SUFFIX,js.zi-scripts.com
+DOMAIN-SUFFIX,kinozal.me
+DOMAIN-SUFFIX,kinozal.tv
+DOMAIN-SUFFIX,last.fm
+DOMAIN-SUFFIX,meduza.io
+DOMAIN-SUFFIX,metacritic.com
+DOMAIN-SUFFIX,metahub.space
+DOMAIN-SUFFIX,nnmclub.to
+DOMAIN-SUFFIX,nnmstatic.win
+DOMAIN-SUFFIX,pixeldrain.com
+DOMAIN-SUFFIX,pokemon-cafe.jp
+DOMAIN-SUFFIX,pornoeb.com
+DOMAIN-SUFFIX,posthog.com
+DOMAIN-SUFFIX,public-api.rottentomatoes.com
+DOMAIN-SUFFIX,pvpoke.com
+DOMAIN-SUFFIX,pythontutor.com
+DOMAIN-SUFFIX,pythontutor.ru
+DOMAIN-SUFFIX,resizing.flixster.com
+DOMAIN-SUFFIX,rutor.info
+DOMAIN-SUFFIX,rutor.is
+DOMAIN-SUFFIX,rutor.org
+DOMAIN-SUFFIX,rutracker.net
+DOMAIN-SUFFIX,rutracker.org
+DOMAIN-SUFFIX,rutracker.ru
+DOMAIN-SUFFIX,rutracker.wiki
+DOMAIN-SUFFIX,rutrk.org
+DOMAIN-SUFFIX,s.nitropay.com
+DOMAIN-SUFFIX,seriesgraph.com
+DOMAIN-SUFFIX,static.rutracker.cc
+DOMAIN-SUFFIX,strem.fun
+DOMAIN-SUFFIX,strem.io
+DOMAIN-SUFFIX,stremio.com
+DOMAIN-SUFFIX,stremio.net
+DOMAIN-SUFFIX,termly.io
+DOMAIN-SUFFIX,themoviedb.org
+DOMAIN-SUFFIX,tmdb.org
+DOMAIN-SUFFIX,txnhh.com
+DOMAIN-SUFFIX,usersporn.com
+DOMAIN-SUFFIX,xcdn1.me
+DOMAIN-SUFFIX,xh.partners
+DOMAIN-SUFFIX,xhamster1.desi
+DOMAIN-SUFFIX,xhamster2.com
+DOMAIN-SUFFIX,xvv1deos.com
