@@ -22,7 +22,6 @@ jobs:
         run: |
           mkdir -p rules
           
-          # Описываем все источники: имя, URL, автор
           # Формат: имя|url|автор
           SOURCES="
           exclude_ads|https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/exclude_ads.txt|efremych
@@ -32,10 +31,10 @@ jobs:
           twitch|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitch.list|MetaCubeX
           youtube|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list|MetaCubeX
           spotify|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.list|MetaCubeX
+          x|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/x.list|MetaCubeX
           "
           
           echo "$SOURCES" | while IFS='|' read -r name url author; do
-            # Пропускаем пустые строки
             [ -z "$name" ] && continue
             
             echo "::group::Обработка: ${name}"
