@@ -25,7 +25,6 @@ jobs:
           # Формат: имя|url|автор
           SOURCES="
           exclude_ads|https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/exclude_ads.txt|efremych
-          custom|https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/custom.txt|efremych
           "
           
           echo "$SOURCES" | while IFS='|' read -r name url author; do
