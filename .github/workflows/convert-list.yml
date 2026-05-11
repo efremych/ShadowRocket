@@ -1,9 +1,9 @@
-name: Convert to Shadowrocket .list
+name: Convert lists to Shadowrocket rules
 
 on:
   schedule:
-    - cron: '0 4 * * 0'  # Каждое воскресенье в 4 утра
-  workflow_dispatch:       # Ручной запуск по кнопке
+    - cron: '0 4 * * 0'
+  workflow_dispatch:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -18,6 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      # ─── exclude_ads ──────────────────────────────────────────
       - name: Download and convert exclude_ads
         run: |
           mkdir -p rules
@@ -42,8 +43,9 @@ jobs:
           echo "" >> rules/exclude_ads.list
           sed 's/^+\./DOMAIN-SUFFIX,/' /tmp/ads_raw.txt >> rules/exclude_ads.list
           
-          echo "✓ exclude_ads: сконвертировано доменов — ${TOTAL_ADS}"
+          echo "✓ exclude_ads: ${TOTAL_ADS} доменов"
 
+      # ─── ip-geo-detect ────────────────────────────────────────
       - name: Download and convert ip-geo-detect
         run: |
           mkdir -p rules
@@ -71,12 +73,43 @@ jobs:
           echo "" >> rules/ip-geo-detect.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/geo_raw.txt >> rules/ip-geo-detect.list
           
-          echo "✓ ip-geo-detect: сконвертировано доменов — ${TOTAL_GEO}"
+          echo "✓ ip-geo-detect: ${TOTAL_GEO} доменов"
 
+      # ─── yandex ───────────────────────────────────────────────
+      - name: Download and convert yandex
+        run: |
+          mkdir -p rules
+          
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/yandex.list" \
+            | tr -d '\r' \
+            | grep -v '^$' \
+            > /tmp/yandex_raw.txt
+          
+          TOTAL_YA=$(wc -l < /tmp/yandex_raw.txt)
+          YA_DOMAIN_COUNT=$(grep -v '^+\.' /tmp/yandex_raw.txt | wc -l)
+          YA_SUFFIX_COUNT=$(grep '^+\.' /tmp/yandex_raw.txt | wc -l)
+          
+          {
+            echo "# NAME: yandex"
+            echo "# AUTHOR: MetaCubeX (converted by efremych)"
+            echo "# REPO: https://github.com/efremych/ShadowRocket"
+            echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
+            echo "# SOURCE: https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/yandex.list"
+            echo "# DOMAIN: ${YA_DOMAIN_COUNT}"
+            echo "# DOMAIN-SUFFIX: ${YA_SUFFIX_COUNT}"
+            echo "# TOTAL: ${TOTAL_YA}"
+          } > rules/yandex.list
+          
+          echo "" >> rules/yandex.list
+          sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/yandex_raw.txt >> rules/yandex.list
+          
+          echo "✓ yandex: ${TOTAL_YA} доменов"
+
+      # ─── Commit ───────────────────────────────────────────────
       - name: Commit and push if changed
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add rules/exclude_ads.list rules/ip-geo-detect.list
+          git add rules/exclude_ads.list rules/ip-geo-detect.list rules/yandex.list
           git diff --staged --quiet || git commit -m "Auto-update rules [skip ci]"
           git push
