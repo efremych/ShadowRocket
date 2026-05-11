@@ -1,4 +1,4 @@
-name: Convert lists to Shadowrocket rules
+name: Build domains rules
 
 on:
   schedule:
