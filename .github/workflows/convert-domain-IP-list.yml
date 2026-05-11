@@ -24,9 +24,18 @@ jobs:
           
           # Формат: имя|url_доменов|url_ip|автор
           SOURCES="
-          telegram|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list|MetaCubeX
-          meta|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/meta.list|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.list|MetaCubeX
+          akamai|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/akamai.list|https://github.com/toneywhitez/zkeen_rules/releases/latest/download/akamai_ips.list|MetaCubeX
+          amazon|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amazon.list|https://github.com/toneywhitez/zkeen_rules/releases/latest/download/amazon_ips.list|MetaCubeX
+          cdn77|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cdn77.list|https://github.com/toneywhitez/zkeen_rules/releases/latest/download/cdn77_ips.list|MetaCubeX
+          cloudflare|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cloudflare.list|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cloudflare.list|MetaCubeX
           custom|https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/custom.txt|https://raw.githubusercontent.com/efremych/mrs-rules/main/ip_cidr/custom.txt|efremych
+          digitalocean|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/digitalocean.list|https://github.com/toneywhitez/zkeen_rules/releases/latest/download/digitalocean_ips.list|MetaCubeX
+          fastly|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/fastly.list|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/fastly.list|MetaCubeX
+          hetzner|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hetzner.list|https://github.com/toneywhitez/zkeen_rules/releases/latest/download/hetzner_ips.list|MetaCubeX
+          meta|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/meta.list|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.list|MetaCubeX
+          oracle|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/oracle.list|https://github.com/toneywhitez/zkeen_rules/releases/latest/download/oracle_ips.list|MetaCubeX
+          telegram|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list|MetaCubeX
+          vodafone|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vodafone.list|https://github.com/toneywhitez/zkeen_rules/releases/latest/download/vodafone_ips.list|MetaCubeX
           "
           
           echo "$SOURCES" | while IFS='|' read -r name url_domains url_ip author; do
