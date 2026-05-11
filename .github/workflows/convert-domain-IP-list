@@ -1,0 +1,74 @@
+name: Build Telegram rules (domains + IP)
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Каждые 6 часов
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Download and build telegram.list
+        run: |
+          mkdir -p rules
+          
+          # ─── Скачиваем домены ──────────────────────────────────
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list" \
+            | tr -d '\r' \
+            | grep -v '^$' \
+            > /tmp/tg_domains_raw.txt
+          
+          TG_DOMAIN=$(grep -v '^+\.' /tmp/tg_domains_raw.txt | wc -l)
+          TG_SUFFIX=$(grep '^+\.' /tmp/tg_domains_raw.txt | wc -l)
+          TG_DOMAINS_TOTAL=$(wc -l < /tmp/tg_domains_raw.txt)
+          
+          # ─── Скачиваем IP ─────────────────────────────────────
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list" \
+            | tr -d '\r' \
+            | grep -v '^$' \
+            > /tmp/tg_ip_raw.txt
+          
+          TG_IP=$(wc -l < /tmp/tg_ip_raw.txt)
+          TG_TOTAL=$((TG_DOMAINS_TOTAL + TG_IP))
+          
+          # ─── Собираем итоговый файл ───────────────────────────
+          {
+            echo "# NAME: telegram"
+            echo "# AUTHOR: MetaCubeX (converted by efremych)"
+            echo "# REPO: https://github.com/efremych/ShadowRocket"
+            echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
+            echo "# SOURCE: https://github.com/MetaCubeX/meta-rules-dat/tree/meta/geo"
+            echo "# DOMAIN: ${TG_DOMAIN}"
+            echo "# DOMAIN-SUFFIX: ${TG_SUFFIX}"
+            echo "# IP-CIDR: ${TG_IP}"
+            echo "# TOTAL: ${TG_TOTAL}"
+          } > rules/telegram.list
+          
+          echo "" >> rules/telegram.list
+          
+          # Домены
+          sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/tg_domains_raw.txt >> rules/telegram.list
+          
+          # IP с no-resolve
+          sed 's/^/IP-CIDR,/; s/$/,no-resolve/' /tmp/tg_ip_raw.txt >> rules/telegram.list
+          
+          echo "✓ telegram: доменов — ${TG_DOMAINS_TOTAL}, IP — ${TG_IP}, всего — ${TG_TOTAL}"
+
+      # ─── Commit ───────────────────────────────────────────────
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add rules/telegram.list
+          git diff --staged --quiet || git commit -m "Auto-update telegram rules [skip ci]"
+          git push
