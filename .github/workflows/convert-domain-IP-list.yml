@@ -25,6 +25,7 @@ jobs:
           # Формат: имя|url_доменов|url_ip|автор
           SOURCES="
           telegram|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list|MetaCubeX
+          meta|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/meta.list|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.list|MetaCubeX
           "
           
           echo "$SOURCES" | while IFS='|' read -r name url_domains url_ip author; do
