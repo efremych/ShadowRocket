@@ -32,6 +32,8 @@ jobs:
           youtube|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list|MetaCubeX
           spotify|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.list|MetaCubeX
           x|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/x.list|MetaCubeX
+          google-gemini|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.list|MetaCubeX
+          openai|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.list|MetaCubeX
           "
           
           echo "$SOURCES" | while IFS='|' read -r name url author; do
