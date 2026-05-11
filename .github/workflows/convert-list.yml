@@ -1,0 +1,82 @@
+name: Convert to Shadowrocket .list
+
+on:
+  schedule:
+    - cron: '0 4 * * 0'  # Каждое воскресенье в 4 утра
+  workflow_dispatch:       # Ручной запуск по кнопке
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Download and convert exclude_ads
+        run: |
+          mkdir -p rules
+          
+          curl -sL "https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/exclude_ads.txt" \
+            | tr -d '\r' \
+            | grep -v '^$' \
+            > /tmp/ads_raw.txt
+          
+          TOTAL_ADS=$(wc -l < /tmp/ads_raw.txt)
+          
+          {
+            echo "# NAME: exclude_ads"
+            echo "# AUTHOR: efremych"
+            echo "# REPO: https://github.com/efremych/ShadowRocket"
+            echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
+            echo "# SOURCE: https://github.com/efremych/mrs-rules/blob/main/domain/exclude_ads.txt"
+            echo "# DOMAIN-SUFFIX: ${TOTAL_ADS}"
+            echo "# TOTAL: ${TOTAL_ADS}"
+          } > rules/exclude_ads.list
+          
+          echo "" >> rules/exclude_ads.list
+          sed 's/^+\./DOMAIN-SUFFIX,/' /tmp/ads_raw.txt >> rules/exclude_ads.list
+          
+          echo "✓ exclude_ads: сконвертировано доменов — ${TOTAL_ADS}"
+
+      - name: Download and convert ip-geo-detect
+        run: |
+          mkdir -p rules
+          
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ip-geo-detect.list" \
+            | tr -d '\r' \
+            | grep -v '^$' \
+            > /tmp/geo_raw.txt
+          
+          TOTAL_GEO=$(wc -l < /tmp/geo_raw.txt)
+          DOMAIN_COUNT=$(grep -v '^+\.' /tmp/geo_raw.txt | wc -l)
+          SUFFIX_COUNT=$(grep '^+\.' /tmp/geo_raw.txt | wc -l)
+          
+          {
+            echo "# NAME: category-ip-geo-detect"
+            echo "# AUTHOR: MetaCubeX (converted by efremych)"
+            echo "# REPO: https://github.com/efremych/ShadowRocket"
+            echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
+            echo "# SOURCE: https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-ip-geo-detect.list"
+            echo "# DOMAIN: ${DOMAIN_COUNT}"
+            echo "# DOMAIN-SUFFIX: ${SUFFIX_COUNT}"
+            echo "# TOTAL: ${TOTAL_GEO}"
+          } > rules/ip-geo-detect.list
+          
+          echo "" >> rules/ip-geo-detect.list
+          sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/geo_raw.txt >> rules/ip-geo-detect.list
+          
+          echo "✓ ip-geo-detect: сконвертировано доменов — ${TOTAL_GEO}"
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add rules/exclude_ads.list rules/ip-geo-detect.list
+          git diff --staged --quiet || git commit -m "Auto-update rules [skip ci]"
+          git push
