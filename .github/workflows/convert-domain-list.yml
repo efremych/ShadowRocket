@@ -22,16 +22,10 @@ jobs:
       - name: Download and convert exclude_ads
         run: |
           mkdir -p rules
-          
-          curl -sL "https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/exclude_ads.txt" \
-            | tr -d '\r' \
-            | grep -v '^$' \
-            > /tmp/ads_raw.txt
-          
+          curl -sL "https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/exclude_ads.txt" | tr -d '\r' | grep -v '^$' > /tmp/ads_raw.txt
           TOTAL_ADS=$(wc -l < /tmp/ads_raw.txt)
           ADS_DOMAIN=$(grep -v '^+\.' /tmp/ads_raw.txt | wc -l)
           ADS_SUFFIX=$(grep '^+\.' /tmp/ads_raw.txt | wc -l)
-          
           {
             echo "# NAME: exclude_ads"
             echo "# AUTHOR: efremych"
@@ -42,26 +36,18 @@ jobs:
             echo "# DOMAIN-SUFFIX: ${ADS_SUFFIX}"
             echo "# TOTAL: ${TOTAL_ADS}"
           } > rules/exclude_ads.list
-          
           echo "" >> rules/exclude_ads.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/ads_raw.txt >> rules/exclude_ads.list
-          
           echo "✓ exclude_ads: ${TOTAL_ADS}"
 
       # ─── 2. ip-geo-detect ─────────────────────────────────────
       - name: Download and convert ip-geo-detect
         run: |
           mkdir -p rules
-          
-          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ip-geo-detect.list" \
-            | tr -d '\r' \
-            | grep -v '^$' \
-            > /tmp/geo_raw.txt
-          
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ip-geo-detect.list" | tr -d '\r' | grep -v '^$' > /tmp/geo_raw.txt
           TOTAL_GEO=$(wc -l < /tmp/geo_raw.txt)
           GEO_DOMAIN=$(grep -v '^+\.' /tmp/geo_raw.txt | wc -l)
           GEO_SUFFIX=$(grep '^+\.' /tmp/geo_raw.txt | wc -l)
-          
           {
             echo "# NAME: category-ip-geo-detect"
             echo "# AUTHOR: MetaCubeX (converted by efremych)"
@@ -72,26 +58,18 @@ jobs:
             echo "# DOMAIN-SUFFIX: ${GEO_SUFFIX}"
             echo "# TOTAL: ${TOTAL_GEO}"
           } > rules/ip-geo-detect.list
-          
           echo "" >> rules/ip-geo-detect.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/geo_raw.txt >> rules/ip-geo-detect.list
-          
           echo "✓ ip-geo-detect: ${TOTAL_GEO}"
 
       # ─── 3. yandex ────────────────────────────────────────────
       - name: Download and convert yandex
         run: |
           mkdir -p rules
-          
-          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/yandex.list" \
-            | tr -d '\r' \
-            | grep -v '^$' \
-            > /tmp/yandex_raw.txt
-          
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/yandex.list" | tr -d '\r' | grep -v '^$' > /tmp/yandex_raw.txt
           TOTAL_YA=$(wc -l < /tmp/yandex_raw.txt)
           YA_DOMAIN=$(grep -v '^+\.' /tmp/yandex_raw.txt | wc -l)
           YA_SUFFIX=$(grep '^+\.' /tmp/yandex_raw.txt | wc -l)
-          
           {
             echo "# NAME: yandex"
             echo "# AUTHOR: MetaCubeX (converted by efremych)"
@@ -102,26 +80,18 @@ jobs:
             echo "# DOMAIN-SUFFIX: ${YA_SUFFIX}"
             echo "# TOTAL: ${TOTAL_YA}"
           } > rules/yandex.list
-          
           echo "" >> rules/yandex.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/yandex_raw.txt >> rules/yandex.list
-          
           echo "✓ yandex: ${TOTAL_YA}"
 
       # ─── 4. binance ───────────────────────────────────────────
       - name: Download and convert binance
         run: |
           mkdir -p rules
-          
-          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/binance.list" \
-            | tr -d '\r' \
-            | grep -v '^$' \
-            > /tmp/binance_raw.txt
-          
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/binance.list" | tr -d '\r' | grep -v '^$' > /tmp/binance_raw.txt
           TOTAL_BNB=$(wc -l < /tmp/binance_raw.txt)
           BNB_DOMAIN=$(grep -v '^+\.' /tmp/binance_raw.txt | wc -l)
           BNB_SUFFIX=$(grep '^+\.' /tmp/binance_raw.txt | wc -l)
-          
           {
             echo "# NAME: binance"
             echo "# AUTHOR: MetaCubeX (converted by efremych)"
@@ -132,26 +102,18 @@ jobs:
             echo "# DOMAIN-SUFFIX: ${BNB_SUFFIX}"
             echo "# TOTAL: ${TOTAL_BNB}"
           } > rules/binance.list
-          
           echo "" >> rules/binance.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/binance_raw.txt >> rules/binance.list
-          
           echo "✓ binance: ${TOTAL_BNB}"
 
       # ─── 5. twitch ────────────────────────────────────────────
       - name: Download and convert twitch
         run: |
           mkdir -p rules
-          
-          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitch.list" \
-            | tr -d '\r' \
-            | grep -v '^$' \
-            > /tmp/twitch_raw.txt
-          
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitch.list" | tr -d '\r' | grep -v '^$' > /tmp/twitch_raw.txt
           TOTAL_TW=$(wc -l < /tmp/twitch_raw.txt)
           TW_DOMAIN=$(grep -v '^+\.' /tmp/twitch_raw.txt | wc -l)
           TW_SUFFIX=$(grep '^+\.' /tmp/twitch_raw.txt | wc -l)
-          
           {
             echo "# NAME: twitch"
             echo "# AUTHOR: MetaCubeX (converted by efremych)"
@@ -162,26 +124,18 @@ jobs:
             echo "# DOMAIN-SUFFIX: ${TW_SUFFIX}"
             echo "# TOTAL: ${TOTAL_TW}"
           } > rules/twitch.list
-          
           echo "" >> rules/twitch.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/twitch_raw.txt >> rules/twitch.list
-          
           echo "✓ twitch: ${TOTAL_TW}"
 
       # ─── 6. youtube ───────────────────────────────────────────
       - name: Download and convert youtube
         run: |
           mkdir -p rules
-          
-          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list" \
-            | tr -d '\r' \
-            | grep -v '^$' \
-            > /tmp/youtube_raw.txt
-          
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list" | tr -d '\r' | grep -v '^$' > /tmp/youtube_raw.txt
           TOTAL_YT=$(wc -l < /tmp/youtube_raw.txt)
           YT_DOMAIN=$(grep -v '^+\.' /tmp/youtube_raw.txt | wc -l)
           YT_SUFFIX=$(grep '^+\.' /tmp/youtube_raw.txt | wc -l)
-          
           {
             echo "# NAME: youtube"
             echo "# AUTHOR: MetaCubeX (converted by efremych)"
@@ -192,11 +146,31 @@ jobs:
             echo "# DOMAIN-SUFFIX: ${YT_SUFFIX}"
             echo "# TOTAL: ${TOTAL_YT}"
           } > rules/youtube.list
-          
           echo "" >> rules/youtube.list
           sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/youtube_raw.txt >> rules/youtube.list
-          
           echo "✓ youtube: ${TOTAL_YT}"
+
+      # ─── 7. spotify ───────────────────────────────────────────
+      - name: Download and convert spotify
+        run: |
+          mkdir -p rules
+          curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.list" | tr -d '\r' | grep -v '^$' > /tmp/spotify_raw.txt
+          TOTAL_SP=$(wc -l < /tmp/spotify_raw.txt)
+          SP_DOMAIN=$(grep -v '^+\.' /tmp/spotify_raw.txt | wc -l)
+          SP_SUFFIX=$(grep '^+\.' /tmp/spotify_raw.txt | wc -l)
+          {
+            echo "# NAME: spotify"
+            echo "# AUTHOR: MetaCubeX (converted by efremych)"
+            echo "# REPO: https://github.com/efremych/ShadowRocket"
+            echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
+            echo "# SOURCE: https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/spotify.list"
+            echo "# DOMAIN: ${SP_DOMAIN}"
+            echo "# DOMAIN-SUFFIX: ${SP_SUFFIX}"
+            echo "# TOTAL: ${TOTAL_SP}"
+          } > rules/spotify.list
+          echo "" >> rules/spotify.list
+          sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' /tmp/spotify_raw.txt >> rules/spotify.list
+          echo "✓ spotify: ${TOTAL_SP}"
 
       # ─── Commit ───────────────────────────────────────────────
       - name: Commit and push if changed
