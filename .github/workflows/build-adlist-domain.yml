@@ -1,0 +1,76 @@
+name: Build custom adlist from Hagezi
+
+on:
+  schedule:
+    - cron: '0 5 * * *'  # Раз в день в 5 утра
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build-adlist:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Prepare exclude list
+        run: |
+          # Если файл exclude_ads.list существует, извлекаем из него чистые домены
+          # (убираем DOMAIN-SUFFIX, или DOMAIN,, оставляем только name)
+          if [ -f rules/exclude_ads.list ]; then
+            grep -E '^(DOMAIN-SUFFIX,|DOMAIN,)' rules/exclude_ads.list | sed 's/^DOMAIN-SUFFIX,//;s/^DOMAIN,//' > exclude_domains.txt
+            echo "Будет исключено доменов: $(wc -l < exclude_domains.txt)"
+          else
+            echo "Файла исключений нет, фильтрация не выполняется."
+            touch exclude_domains.txt
+          fi
+
+      - name: Download and filter Hagezi list
+        run: |
+          echo "Скачиваем список Hagezi Pro..."
+          curl -LsO https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt
+          
+          echo "Удаляем комментарии..."
+          grep -v '^#' pro-onlydomains.txt > cleaned.txt
+          
+          echo "Применяем список исключений..."
+          if [ -s exclude_domains.txt ]; then
+            grep -vFf exclude_domains.txt cleaned.txt > filtered.txt || { echo "Ошибка фильтрации"; exit 1; }
+          else
+            mv cleaned.txt filtered.txt
+          fi
+          
+          TOTAL=$(wc -l < filtered.txt)
+          echo "Доменов после фильтрации: ${TOTAL}"
+          
+          # Формируем итоговый .list
+          {
+            echo "# NAME: adlist"
+            echo "# AUTHOR: efremych (based on Hagezi Pro)"
+            echo "# REPO: https://github.com/efremych/ShadowRocket"
+            echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
+            echo "# SOURCE: https://github.com/hagezi/dns-blocklists (filtered with exclude_ads)"
+            echo "# DOMAIN-SUFFIX: ${TOTAL}"
+            echo "# TOTAL: ${TOTAL}"
+          } > rules/adlist.list
+          
+          # Добавляем префикс
+          sed 's/^/DOMAIN-SUFFIX,/' filtered.txt >> rules/adlist.list
+          
+          echo "✅ adlist.list готов: ${TOTAL} правил"
+          
+          # Чистим временные файлы
+          rm -f pro-onlydomains.txt cleaned.txt filtered.txt exclude_domains.txt
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add rules/adlist.list
+          git diff --staged --quiet || git commit -m "Auto-update adlist rules [skip ci]"
+          git push
