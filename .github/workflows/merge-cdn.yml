@@ -2,7 +2,7 @@ name: Build merged CDN rules
 
 on:
   schedule:
-    - cron: '30 */6 * * *'   # каждые 6 часов в 30 минут (с запасом после обновления исходников)
+    - cron: '0 2 * * 0' # В воскресенье в 5 утра по мск
   workflow_dispatch:
 
 env:
