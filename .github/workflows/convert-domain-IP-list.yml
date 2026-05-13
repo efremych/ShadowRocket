@@ -2,7 +2,7 @@ name: Build domains+IP rules
 
 on:
   schedule:
-    - cron: '0 1 * * 0' # Раз в день в 4 утра по мск
+    - cron: '0 1 * * 0' # В воскресенье в 4 утра по мск
   workflow_dispatch:
 
 env:
