@@ -2,7 +2,7 @@ name: Build custom adlist from Hagezi
 
 on:
   schedule:
-    - cron: '0 5 * * *'  # Раз в день в 5 утра
+    - cron: '0 2 * * *'  # Раз в день в 5 утра по мск
   workflow_dispatch:
 
 env:
