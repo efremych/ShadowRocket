@@ -2,7 +2,7 @@ name: Build merged CDN rules
 
 on:
   schedule:
-    - cron: '0 2 * * 0' # В воскресенье в 5 утра по мск
+    - cron: '0 2 * * 0'  # В воскресенье в 5 утра по МСК
   workflow_dispatch:
 
 env:
@@ -22,7 +22,6 @@ jobs:
         run: |
           mkdir -p rules
 
-          # Список источников (прямые ссылки на raw)
           URLS=(
             "https://raw.githubusercontent.com/efremych/ShadowRocket/refs/heads/main/rules/akamai.list"
             "https://raw.githubusercontent.com/efremych/ShadowRocket/refs/heads/main/rules/amazon.list"
@@ -36,7 +35,6 @@ jobs:
             "https://raw.githubusercontent.com/efremych/ShadowRocket/refs/heads/main/rules/vodafone.list"
           )
 
-          # Временные файлы
           DOMAINS_FILE="/tmp/all_domains.tmp"
           IPS_FILE="/tmp/all_ips.tmp"
           > "$DOMAINS_FILE"
@@ -44,22 +42,27 @@ jobs:
 
           for url in "${URLS[@]}"; do
             echo "Скачиваем: $url"
-            # Скачиваем, убираем \r и пустые строки, отсеиваем заголовки/комментарии
             curl -sL "$url" | tr -d '\r' | grep -v '^[[:space:]]*$' | grep -v '^#' > /tmp/current.list
 
+            # Исправляем задвоенные префиксы
+            sed -i 's/^IP-CIDR,IP-CIDR,/IP-CIDR,/' /tmp/current.list
+            sed -i 's/^IP-CIDR6,IP-CIDR6,/IP-CIDR6,/' /tmp/current.list
+
             # Разделяем на домены и IP
-            grep -E '^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD),' /tmp/current.list >> "$DOMAINS_FILE" || true
-            grep -E '^(IP-CIDR|IP-CIDR6|IP-ASN),' /tmp/current.list >> "$IPS_FILE" || true
+            grep -E '^(DOMAIN-SUFFIX|DOMAIN),' /tmp/current.list >> "$DOMAINS_FILE" || true
+            grep -E '^(IP-CIDR|IP-CIDR6),' /tmp/current.list >> "$IPS_FILE" || true
           done
 
-          # Подсчёты
+          # Сортируем и убираем дубликаты
+          sort -u "$DOMAINS_FILE" -o "$DOMAINS_FILE"
+          sort -u "$IPS_FILE" -o "$IPS_FILE"
+
           DOMAIN_COUNT=$(wc -l < "$DOMAINS_FILE")
           IP_COUNT=$(wc -l < "$IPS_FILE")
           TOTAL=$((DOMAIN_COUNT + IP_COUNT))
 
           echo "Доменов: $DOMAIN_COUNT, IP: $IP_COUNT"
 
-          # Сборка итогового файла
           {
             echo "# NAME: cdn_merged"
             echo "# AUTHOR: efremych (merged from multiple sources)"
