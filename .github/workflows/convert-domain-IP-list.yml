@@ -73,8 +73,8 @@ jobs:
             # Домены
             sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' "/tmp/${name}_domains_raw.txt" >> "rules/${name}.list"
             
-            # IP с no-resolve
-            sed 's/^/IP-CIDR,/; s/$/,no-resolve/' "/tmp/${name}_ip_raw.txt" >> "rules/${name}.list"
+            # IP
+            sed 's/^/IP-CIDR,/' "/tmp/${name}_raw.txt" >> "rules/${name}.list"
             
             echo "✓ ${name}: доменов — ${TG_DOMAINS_TOTAL}, IP — ${TG_IP}, всего — ${TOTAL}"
             echo "::endgroup::"
