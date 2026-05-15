@@ -2,7 +2,7 @@ name: Build domains+IP rules
 
 on:
   schedule:
-    - cron: '0 1 * * 0' # В воскресенье в 4 утра по мск
+    - cron: '0 1 * * 0' # В воскресенье в 4 утра по МСК
   workflow_dispatch:
 
 env:
@@ -51,6 +51,10 @@ jobs:
             
             # Скачиваем IP
             curl -sL "$url_ip" | tr -d '\r' | grep -v '^$' > "/tmp/${name}_ip_raw.txt"
+            
+            # Очищаем IP-строки от возможных префиксов IP-CIDR, и суффиксов ,no-resolve
+            sed -i -E 's/^(IP-CIDR6?,)?//; s/,no-resolve$//' "/tmp/${name}_ip_raw.txt"
+            
             TG_IP=$(wc -l < "/tmp/${name}_ip_raw.txt")
             
             TOTAL=$((TG_DOMAINS_TOTAL + TG_IP))
@@ -73,8 +77,8 @@ jobs:
             # Домены
             sed -e 's/^+\./DOMAIN-SUFFIX,/' -e '/^DOMAIN-SUFFIX,/!s/^/DOMAIN,/' "/tmp/${name}_domains_raw.txt" >> "rules/${name}.list"
             
-            # IP
-            sed 's/^/IP-CIDR,/' "/tmp/${name}_raw.txt" >> "rules/${name}.list"
+            # IP (после очистки просто добавляем IP-CIDR,)
+            sed 's/^/IP-CIDR,/' "/tmp/${name}_ip_raw.txt" >> "rules/${name}.list"
             
             echo "✓ ${name}: доменов — ${TG_DOMAINS_TOTAL}, IP — ${TG_IP}, всего — ${TOTAL}"
             echo "::endgroup::"
