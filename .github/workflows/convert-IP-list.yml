@@ -47,8 +47,8 @@ jobs:
             } > "rules/${name}.list"
             
             echo "" >> "rules/${name}.list"
-            sed 's/^/IP-CIDR,/; s/$/,no-resolve/' "/tmp/${name}_raw.txt" >> "rules/${name}.list"
-            
+            sed 's/^/IP-CIDR,/' "/tmp/${name}_raw.txt" >> "rules/${name}.list"
+           
             echo "✓ ${name}: ${TOTAL}"
             echo "::endgroup::"
           done
