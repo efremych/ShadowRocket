@@ -1,7 +1,7 @@
 # NAME: custom
 # AUTHOR: efremych (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-05-11 20:22:55
+# UPDATED: 2026-05-15 15:42:22
 # SOURCE: https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/custom.txt + https://raw.githubusercontent.com/efremych/mrs-rules/main/ip_cidr/custom.txt
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 70
@@ -78,9 +78,9 @@ DOMAIN-SUFFIX,xh.partners
 DOMAIN-SUFFIX,xhamster1.desi
 DOMAIN-SUFFIX,xhamster2.com
 DOMAIN-SUFFIX,xvv1deos.com
-IP-CIDR,83.228.216.107/32,no-resolve
-IP-CIDR,83.228.216.111/32,no-resolve
-IP-CIDR,104.18.30.170/32,no-resolve
-IP-CIDR,104.18.31.170/32,no-resolve
-IP-CIDR,104.20.39.144/32,no-resolve
-IP-CIDR,172.66.159.63/32,no-resolve
+IP-CIDR,83.228.216.107/32
+IP-CIDR,83.228.216.111/32
+IP-CIDR,104.18.30.170/32
+IP-CIDR,104.18.31.170/32
+IP-CIDR,104.20.39.144/32
+IP-CIDR,172.66.159.63/32
