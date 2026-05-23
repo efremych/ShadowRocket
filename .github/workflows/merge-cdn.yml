@@ -30,6 +30,7 @@ jobs:
             "https://raw.githubusercontent.com/efremych/ShadowRocket/refs/heads/main/rules/digitalocean.list"
             "https://raw.githubusercontent.com/efremych/ShadowRocket/refs/heads/main/rules/fastly.list"
             "https://raw.githubusercontent.com/efremych/ShadowRocket/refs/heads/main/rules/hetzner.list"
+            "https://github.com/toneywhitez/zkeen_rules/releases/latest/download/leaseweb_ips.list"
             "https://raw.githubusercontent.com/efremych/ShadowRocket/refs/heads/main/rules/oracle.list"
             "https://github.com/toneywhitez/zkeen_rules/releases/latest/download/scaleway_ips.list"
             "https://raw.githubusercontent.com/efremych/ShadowRocket/refs/heads/main/rules/vodafone.list"
