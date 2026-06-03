@@ -1,12 +1,12 @@
 # NAME: telegram
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-06-02 08:52:02
+# UPDATED: 2026-06-03 09:06:30
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list + https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list
 # DOMAIN: 0
-# DOMAIN-SUFFIX: 20
+# DOMAIN-SUFFIX: 21
 # IP-CIDR: 12
-# TOTAL: 32
+# TOTAL: 33
 
 DOMAIN-SUFFIX,cdn-telegram.org
 DOMAIN-SUFFIX,comments.app
@@ -26,6 +26,7 @@ DOMAIN-SUFFIX,telegram.space
 DOMAIN-SUFFIX,telesco.pe
 DOMAIN-SUFFIX,tg.dev
 DOMAIN-SUFFIX,ton.org
+DOMAIN-SUFFIX,toncenter.com
 DOMAIN-SUFFIX,tx.me
 DOMAIN-SUFFIX,usercontent.dev
 IP-CIDR,91.105.192.0/23
