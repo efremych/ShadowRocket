@@ -1,7 +1,7 @@
 # NAME: digitalocean
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-06-06 07:55:41
+# UPDATED: 2026-06-07 08:24:35
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/digitalocean.list + https://github.com/toneywhitez/zkeen_rules/releases/latest/download/digitalocean_ips.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 6
