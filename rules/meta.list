@@ -1,29 +1,18 @@
 # NAME: meta
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-06-25 08:07:09
+# UPDATED: 2026-06-26 08:10:15
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/meta.list + https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.list
 # DOMAIN: 2
 # DOMAIN-SUFFIX: 551
-# IP-CIDR: 118
-# TOTAL: 671
+# IP-CIDR: 120
+# TOTAL: 673
 
 DOMAIN,fbcdn-a.akamaihd.net
 DOMAIN,developers.facebook.com
 DOMAIN-SUFFIX,llama.com
 DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,meta.com
-DOMAIN-SUFFIX,wa.me
-DOMAIN-SUFFIX,whatsapp-plus.info
-DOMAIN-SUFFIX,whatsapp-plus.me
-DOMAIN-SUFFIX,whatsapp-plus.net
-DOMAIN-SUFFIX,whatsapp.cc
-DOMAIN-SUFFIX,whatsapp.com
-DOMAIN-SUFFIX,whatsapp.info
-DOMAIN-SUFFIX,whatsapp.net
-DOMAIN-SUFFIX,whatsapp.org
-DOMAIN-SUFFIX,whatsapp.tv
-DOMAIN-SUFFIX,whatsappbrand.com
 DOMAIN-SUFFIX,aboutfacebook.com
 DOMAIN-SUFFIX,accessfacebookfromschool.com
 DOMAIN-SUFFIX,acebooik.com
@@ -554,13 +543,24 @@ DOMAIN-SUFFIX,oculusvr.com
 DOMAIN-SUFFIX,powersunitedvr.com
 DOMAIN-SUFFIX,threads.com
 DOMAIN-SUFFIX,threads.net
-DOMAIN-SUFFIX,graph.whatsapp.com
-DOMAIN-SUFFIX,graph.whatsapp.net
+DOMAIN-SUFFIX,wa.me
+DOMAIN-SUFFIX,whatsapp-plus.info
+DOMAIN-SUFFIX,whatsapp-plus.me
+DOMAIN-SUFFIX,whatsapp-plus.net
+DOMAIN-SUFFIX,whatsapp.cc
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,whatsapp.info
+DOMAIN-SUFFIX,whatsapp.net
+DOMAIN-SUFFIX,whatsapp.org
+DOMAIN-SUFFIX,whatsapp.tv
+DOMAIN-SUFFIX,whatsappbrand.com
 DOMAIN-SUFFIX,analytics.facebook.com
 DOMAIN-SUFFIX,facebookads.com
 DOMAIN-SUFFIX,pixel.facebook.com
 DOMAIN-SUFFIX,graph.instagram.com
 DOMAIN-SUFFIX,graph-fallback.instagram.com
+DOMAIN-SUFFIX,graph.whatsapp.com
+DOMAIN-SUFFIX,graph.whatsapp.net
 IP-CIDR,31.13.24.0/21
 IP-CIDR,31.13.64.0/18
 IP-CIDR,45.64.40.0/22
@@ -574,6 +574,7 @@ IP-CIDR,57.141.12.0/23
 IP-CIDR,57.141.14.0/24
 IP-CIDR,57.141.16.0/22
 IP-CIDR,57.141.20.0/24
+IP-CIDR,57.141.24.0/24
 IP-CIDR,57.144.0.0/14
 IP-CIDR,66.220.144.0/20
 IP-CIDR,69.63.176.0/20
@@ -654,6 +655,7 @@ IP-CIDR,2a03:2887:ff22::/47
 IP-CIDR,2a03:2887:ff27::/48
 IP-CIDR,2a03:2887:ff28::/46
 IP-CIDR,2a03:2887:ff2e::/47
+IP-CIDR,2a03:2887:ff30::/48
 IP-CIDR,2a03:2887:ff33::/48
 IP-CIDR,2a03:2887:ff37::/48
 IP-CIDR,2a03:2887:ff38::/46
