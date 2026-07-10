@@ -1,11 +1,11 @@
 # NAME: cdn_merged
 # AUTHOR: efremych (merged from multiple sources)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-07-09 09:03:15
+# UPDATED: 2026-07-10 09:02:27
 # SOURCE: akamai, amazon, cdn77, cloudflare, digitalocean, fastly, hetzner, oracle, scaleway, vodafone
 # DOMAIN: 459
-# IP-CIDR: 14327
-# TOTAL: 14786
+# IP-CIDR: 14328
+# TOTAL: 14787
 
 # ===== DOMAINS =====
 DOMAIN,d1v5ir2lpwr8os.cloudfront.net
@@ -12417,6 +12417,7 @@ IP-CIDR,51.180.0.0/15
 IP-CIDR,51.184.0.0/15
 IP-CIDR,51.188.0.0/15
 IP-CIDR,51.192.0.0/15
+IP-CIDR,51.194.144.0/22
 IP-CIDR,51.195.0.0/16
 IP-CIDR,51.196.0.0/15
 IP-CIDR,51.198.64.0/22
