@@ -1,12 +1,12 @@
 # NAME: cloudflare
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-07-08 07:16:13
+# UPDATED: 2026-07-10 07:54:35
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cloudflare.list + https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cloudflare.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 74
-# IP-CIDR: 758
-# TOTAL: 832
+# IP-CIDR: 759
+# TOTAL: 833
 
 DOMAIN-SUFFIX,argotunnel.com
 DOMAIN-SUFFIX,browser.run
@@ -204,6 +204,7 @@ IP-CIDR,45.205.0.0/24
 IP-CIDR,45.250.154.0/23
 IP-CIDR,46.202.30.0/24
 IP-CIDR,49.238.236.0/22
+IP-CIDR,51.194.144.0/22
 IP-CIDR,51.241.128.0/23
 IP-CIDR,57.250.49.0/24
 IP-CIDR,61.32.240.0/24
