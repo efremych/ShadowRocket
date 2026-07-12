@@ -1,7 +1,7 @@
 # NAME: akamai
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-07-11 07:14:15
+# UPDATED: 2026-07-12 07:26:13
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/akamai.list + https://github.com/toneywhitez/zkeen_rules/releases/latest/download/akamai_ips.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 81
@@ -296,12 +296,12 @@ IP-CIDR,199.101.28.0/22
 IP-CIDR,199.119.220.0/22
 IP-CIDR,200.60.136.0/24
 IP-CIDR,200.60.190.0/24
-IP-CIDR,201.220.10.0/24
 IP-CIDR,202.138.153.0/24
 IP-CIDR,202.138.164.0/22
 IP-CIDR,202.138.183.0/24
 IP-CIDR,203.69.138.0/24
 IP-CIDR,203.69.141.0/24
+IP-CIDR,203.144.1.0/24
 IP-CIDR,203.198.20.0/24
 IP-CIDR,203.251.233.0/24
 IP-CIDR,203.251.234.0/24

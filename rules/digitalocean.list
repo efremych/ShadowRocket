@@ -1,12 +1,12 @@
 # NAME: digitalocean
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-07-11 07:14:17
+# UPDATED: 2026-07-12 07:26:16
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/digitalocean.list + https://github.com/toneywhitez/zkeen_rules/releases/latest/download/digitalocean_ips.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 6
-# IP-CIDR: 204
-# TOTAL: 210
+# IP-CIDR: 205
+# TOTAL: 211
 
 DOMAIN-SUFFIX,digitalocean.com
 DOMAIN-SUFFIX,digitalocean-ui.com
@@ -199,6 +199,7 @@ IP-CIDR,206.81.0.0/19
 IP-CIDR,206.189.0.0/16
 IP-CIDR,207.154.192.0/18
 IP-CIDR,208.68.36.0/22
+IP-CIDR,208.92.97.0/24
 IP-CIDR,209.38.0.0/16
 IP-CIDR,209.97.128.0/18
 IP-CIDR,212.74.48.0/24
