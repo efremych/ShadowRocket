@@ -1,7 +1,7 @@
 # NAME: oracle
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-07-14 07:05:08
+# UPDATED: 2026-07-15 07:07:00
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/oracle.list + https://github.com/toneywhitez/zkeen_rules/releases/latest/download/oracle_ips.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 19
@@ -21,12 +21,12 @@ DOMAIN-SUFFIX,oracleimg.com
 DOMAIN-SUFFIX,oracleinfinity.io
 DOMAIN-SUFFIX,covid19-rx.org
 DOMAIN-SUFFIX,virtualbox.org
-DOMAIN-SUFFIX,ateam-oracle.com
-DOMAIN-SUFFIX,java.com
-DOMAIN-SUFFIX,java.net
 DOMAIN-SUFFIX,addthis.com
 DOMAIN-SUFFIX,addthiscdn.com
 DOMAIN-SUFFIX,addthisedge.com
+DOMAIN-SUFFIX,ateam-oracle.com
+DOMAIN-SUFFIX,java.com
+DOMAIN-SUFFIX,java.net
 IP-CIDR,5.100.152.0/22
 IP-CIDR,5.226.187.0/24
 IP-CIDR,23.173.184.0/24
