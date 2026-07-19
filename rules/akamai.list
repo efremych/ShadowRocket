@@ -1,12 +1,12 @@
 # NAME: akamai
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-07-18 06:56:13
+# UPDATED: 2026-07-19 07:22:15
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/akamai.list + https://github.com/toneywhitez/zkeen_rules/releases/latest/download/akamai_ips.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 81
-# IP-CIDR: 444
-# TOTAL: 525
+# IP-CIDR: 445
+# TOTAL: 526
 
 DOMAIN-SUFFIX,ak1.net
 DOMAIN-SUFFIX,aka-ai.com
@@ -472,6 +472,7 @@ IP-CIDR,2400:8901::/32
 IP-CIDR,2400:8902::/32
 IP-CIDR,2400:8904::/31
 IP-CIDR,2400:8907::/32
+IP-CIDR,2401:fdc0:a000::/48
 IP-CIDR,2403:c780:7203::/48
 IP-CIDR,2404:c800:8203::/48
 IP-CIDR,2405:9600::/32
