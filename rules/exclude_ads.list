@@ -1,14 +1,15 @@
 # NAME: exclude_ads
 # AUTHOR: efremych (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-07-31 07:15:53
+# UPDATED: 2026-08-01 07:14:41
 # SOURCE: https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/exclude_ads.txt
 # DOMAIN: 0
-# DOMAIN-SUFFIX: 6
-# TOTAL: 6
+# DOMAIN-SUFFIX: 7
+# TOTAL: 7
 
 DOMAIN-SUFFIX,ageverif.com
 DOMAIN-SUFFIX,cloudflareinsights.com
+DOMAIN-SUFFIX,counters.booking.com
 DOMAIN-SUFFIX,mc.yandex.ru
 DOMAIN-SUFFIX,ndmdhs.com
 DOMAIN-SUFFIX,pub.network
