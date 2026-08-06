@@ -1,11 +1,11 @@
 # NAME: cdn_merged
 # AUTHOR: efremych (merged from multiple sources)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-08-05 08:13:30
+# UPDATED: 2026-08-06 08:15:06
 # SOURCE: akamai, amazon, cdn77, cloudflare, digitalocean, fastly, hetzner, oracle, scaleway, vodafone
-# DOMAIN: 459
+# DOMAIN: 460
 # IP-CIDR: 14457
-# TOTAL: 14916
+# TOTAL: 14917
 
 # ===== DOMAINS =====
 DOMAIN,d1v5ir2lpwr8os.cloudfront.net
@@ -282,9 +282,11 @@ DOMAIN-SUFFIX,cloudflare-gateway.com
 DOMAIN-SUFFIX,cloudflare-ipfs.com
 DOMAIN-SUFFIX,cloudflare-quic.com
 DOMAIN-SUFFIX,cloudflare-terms-of-service-abuse.com
+DOMAIN-SUFFIX,cloudflare.app
 DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,cloudflare.dev
 DOMAIN-SUFFIX,cloudflare.net
+DOMAIN-SUFFIX,cloudflare.pay
 DOMAIN-SUFFIX,cloudflare.tv
 DOMAIN-SUFFIX,cloudflareaccess.com
 DOMAIN-SUFFIX,cloudflareanycast.net
@@ -466,7 +468,6 @@ DOMAIN-SUFFIX,your-storagebox.de
 DOMAIN-SUFFIX,your-storageshare.de
 DOMAIN-SUFFIX,z.cn
 DOMAIN-SUFFIX,zappos
-DOMAIN-SUFFIX,zencdn.net
 
 # ===== IPs =====
 IP-CIDR,1.0.0.0/24
