@@ -39,8 +39,10 @@ jobs:
 
           DOMAINS_FILE="/tmp/all_domains.tmp"
           IPS_FILE="/tmp/all_ips.tmp"
+          ASNS_FILE="/tmp/all_asns.tmp"
           > "$DOMAINS_FILE"
           > "$IPS_FILE"
+          > "$ASNS_FILE"
 
           for url in "${URLS[@]}"; do
             echo "Скачиваем: $url"
@@ -50,29 +52,36 @@ jobs:
             sed -i 's/^IP-CIDR,IP-CIDR,/IP-CIDR,/' /tmp/current.list
             sed -i 's/^IP-CIDR6,IP-CIDR6,/IP-CIDR6,/' /tmp/current.list
 
-            # Разделяем на домены и IP
+            # Разделяем на домены, IP и ASN (если попадутся в источниках)
             grep -E '^(DOMAIN-SUFFIX|DOMAIN),' /tmp/current.list >> "$DOMAINS_FILE" || true
             grep -E '^(IP-CIDR|IP-CIDR6),' /tmp/current.list >> "$IPS_FILE" || true
+            grep -E '^IP-ASN,' /tmp/current.list >> "$ASNS_FILE" || true
           done
+
+          # Добавляем вручную указанные ASN
+          echo "IP-ASN,39572 # DataWeb" >> "$ASNS_FILE"
 
           # Сортируем и убираем дубликаты
           sort -u "$DOMAINS_FILE" -o "$DOMAINS_FILE"
           sort -u "$IPS_FILE" -o "$IPS_FILE"
+          sort -u "$ASNS_FILE" -o "$ASNS_FILE"
 
           DOMAIN_COUNT=$(wc -l < "$DOMAINS_FILE")
           IP_COUNT=$(wc -l < "$IPS_FILE")
-          TOTAL=$((DOMAIN_COUNT + IP_COUNT))
+          ASN_COUNT=$(wc -l < "$ASNS_FILE")
+          TOTAL=$((DOMAIN_COUNT + IP_COUNT + ASN_COUNT))
 
-          echo "Доменов: $DOMAIN_COUNT, IP: $IP_COUNT"
+          echo "Доменов: $DOMAIN_COUNT, IP: $IP_COUNT, ASN: $ASN_COUNT"
 
           {
             echo "# NAME: cdn_merged"
             echo "# AUTHOR: efremych (merged from multiple sources)"
             echo "# REPO: https://github.com/efremych/ShadowRocket"
             echo "# UPDATED: $(TZ='Europe/Moscow' date '+%Y-%m-%d %H:%M:%S')"
-            echo "# SOURCE: akamai, amazon, cdn77, cloudflare, digitalocean, fastly, hetzner, oracle, scaleway, vodafone"
+            echo "# SOURCE: akamai, amazon, cdn77, cloudflare, digitalocean, fastly, hetzner, leaseweb, oracle, ovh, scaleway, vodafone, ASN DataWeb"
             echo "# DOMAIN: ${DOMAIN_COUNT}"
             echo "# IP-CIDR: ${IP_COUNT}"
+            echo "# IP-ASN: ${ASN_COUNT}"
             echo "# TOTAL: ${TOTAL}"
             echo ""
             echo "# ===== DOMAINS ====="
@@ -80,6 +89,9 @@ jobs:
             echo ""
             echo "# ===== IPs ====="
             cat "$IPS_FILE"
+            echo ""
+            echo "# ===== ASNs ====="
+            cat "$ASNS_FILE"
           } > rules/cdn_merged.list
 
           echo "✅ cdn_merged.list создан: $TOTAL правил"
