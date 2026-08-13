@@ -1,7 +1,7 @@
 # NAME: adlist
 # AUTHOR: efremych (based on Hagezi Pro)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-08-12 06:25:04
+# UPDATED: 2026-08-13 06:28:12
 # SOURCE: https://github.com/hagezi/dns-blocklists (filtered with exclude_ads)
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
