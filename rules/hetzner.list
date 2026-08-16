@@ -1,12 +1,12 @@
 # NAME: hetzner
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-08-15 05:14:03
+# UPDATED: 2026-08-16 05:21:22
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hetzner.list + https://github.com/toneywhitez/zkeen_rules/releases/latest/download/hetzner_ips.list
 # DOMAIN: 1
 # DOMAIN-SUFFIX: 14
-# IP-CIDR: 110
-# TOTAL: 125
+# IP-CIDR: 111
+# TOTAL: 126
 
 DOMAIN-SUFFIX,first-ns.de
 DOMAIN-SUFFIX,hetzner-cloud.de
@@ -49,6 +49,7 @@ IP-CIDR,78.138.62.0/24
 IP-CIDR,82.39.175.0/24
 IP-CIDR,83.219.100.0/22
 IP-CIDR,85.10.192.0/18
+IP-CIDR,85.93.20.0/24
 IP-CIDR,87.99.128.0/17
 IP-CIDR,88.99.0.0/16
 IP-CIDR,88.198.0.0/16
