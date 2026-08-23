@@ -1,12 +1,12 @@
 # NAME: cdn77
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-08-22 05:15:45
+# UPDATED: 2026-08-23 05:24:07
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cdn77.list + https://github.com/toneywhitez/zkeen_rules/releases/latest/download/cdn77_ips.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 2
-# IP-CIDR: 208
-# TOTAL: 210
+# IP-CIDR: 207
+# TOTAL: 209
 
 DOMAIN-SUFFIX,cdn77.com
 DOMAIN-SUFFIX,cdn77.org
@@ -189,7 +189,6 @@ IP-CIDR,212.102.50.0/24
 IP-CIDR,212.102.52.0/22
 IP-CIDR,212.102.56.0/21
 IP-CIDR,213.139.8.0/22
-IP-CIDR,213.247.32.0/19
 IP-CIDR,217.79.104.0/22
 IP-CIDR,217.79.116.0/22
 IP-CIDR,2400:52e0:1e00::/48
