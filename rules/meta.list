@@ -1,12 +1,12 @@
 # NAME: meta
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-09-03 08:32:42
+# UPDATED: 2026-09-04 08:37:54
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/meta.list + https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.list
 # DOMAIN: 2
 # DOMAIN-SUFFIX: 552
-# IP-CIDR: 123
-# TOTAL: 677
+# IP-CIDR: 121
+# TOTAL: 675
 
 DOMAIN,fbcdn-a.akamaihd.net
 DOMAIN,developers.facebook.com
@@ -611,7 +611,7 @@ IP-CIDR,129.134.164.0/23
 IP-CIDR,129.134.168.0/21
 IP-CIDR,129.134.176.0/20
 IP-CIDR,129.134.194.0/23
-IP-CIDR,129.134.197.0/24
+IP-CIDR,129.134.196.0/23
 IP-CIDR,157.240.0.0/17
 IP-CIDR,157.240.128.0/23
 IP-CIDR,157.240.131.0/24
@@ -661,8 +661,7 @@ IP-CIDR,2a03:2887:ff2e::/47
 IP-CIDR,2a03:2887:ff30::/48
 IP-CIDR,2a03:2887:ff33::/48
 IP-CIDR,2a03:2887:ff37::/48
-IP-CIDR,2a03:2887:ff38::/48
-IP-CIDR,2a03:2887:ff3a::/47
+IP-CIDR,2a03:2887:ff38::/46
 IP-CIDR,2a03:2887:ff3e::/47
 IP-CIDR,2a03:2887:ff40::/46
 IP-CIDR,2a03:2887:ff44::/47
@@ -678,8 +677,7 @@ IP-CIDR,2a03:2887:ff62::/47
 IP-CIDR,2a03:2887:ff64::/46
 IP-CIDR,2a03:2887:ff68::/46
 IP-CIDR,2a03:2887:ff6f::/48
-IP-CIDR,2a03:2887:ff70::/47
-IP-CIDR,2a03:2887:ff72::/48
+IP-CIDR,2a03:2887:ff70::/46
 IP-CIDR,2c0f:ef78:3::/48
 IP-CIDR,2c0f:ef78:5::/48
 IP-CIDR,2c0f:ef78:9::/48
