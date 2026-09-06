@@ -1,12 +1,12 @@
 # NAME: custom
 # AUTHOR: efremych (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-09-04 08:37:52
+# UPDATED: 2026-09-06 08:39:37
 # SOURCE: https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/custom.txt + https://raw.githubusercontent.com/efremych/mrs-rules/main/ip_cidr/custom.txt
 # DOMAIN: 0
-# DOMAIN-SUFFIX: 76
+# DOMAIN-SUFFIX: 77
 # IP-CIDR: 2
-# TOTAL: 78
+# TOTAL: 79
 
 DOMAIN-SUFFIX,4pda.ru
 DOMAIN-SUFFIX,4pda.to
@@ -50,6 +50,7 @@ DOMAIN-SUFFIX,nnmclub.to
 DOMAIN-SUFFIX,nnmstatic.win
 DOMAIN-SUFFIX,pixeldrain.com
 DOMAIN-SUFFIX,pokemon-cafe.jp
+DOMAIN-SUFFIX,pokemongo.com
 DOMAIN-SUFFIX,pornoeb.com
 DOMAIN-SUFFIX,posthog.com
 DOMAIN-SUFFIX,public-api.rottentomatoes.com
