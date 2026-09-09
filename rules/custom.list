@@ -1,12 +1,12 @@
 # NAME: custom
 # AUTHOR: efremych (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-09-08 08:42:29
+# UPDATED: 2026-09-09 08:47:31
 # SOURCE: https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/custom.txt + https://raw.githubusercontent.com/efremych/mrs-rules/main/ip_cidr/custom.txt
 # DOMAIN: 0
-# DOMAIN-SUFFIX: 77
+# DOMAIN-SUFFIX: 78
 # IP-CIDR: 2
-# TOTAL: 79
+# TOTAL: 80
 
 DOMAIN-SUFFIX,4pda.ru
 DOMAIN-SUFFIX,4pda.to
@@ -58,6 +58,7 @@ DOMAIN-SUFFIX,pvpoke.com
 DOMAIN-SUFFIX,pythontutor.com
 DOMAIN-SUFFIX,pythontutor.ru
 DOMAIN-SUFFIX,resizing.flixster.com
+DOMAIN-SUFFIX,ru.sex-studentki.studio
 DOMAIN-SUFFIX,rutor.info
 DOMAIN-SUFFIX,rutor.is
 DOMAIN-SUFFIX,rutor.org
