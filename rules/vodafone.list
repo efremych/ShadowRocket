@@ -1,12 +1,12 @@
 # NAME: vodafone
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-09-12 08:28:29
+# UPDATED: 2026-09-13 08:44:45
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vodafone.list + https://github.com/toneywhitez/zkeen_rules/releases/latest/download/vodafone_ips.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 9
-# IP-CIDR: 1769
-# TOTAL: 1778
+# IP-CIDR: 1768
+# TOTAL: 1777
 
 DOMAIN-SUFFIX,vodafone.com
 DOMAIN-SUFFIX,vodafone.de
@@ -202,7 +202,7 @@ IP-CIDR,62.68.224.0/19
 IP-CIDR,62.72.192.0/19
 IP-CIDR,62.74.0.0/16
 IP-CIDR,62.81.0.0/16
-IP-CIDR,62.82.0.0/15
+IP-CIDR,62.82.0.0/16
 IP-CIDR,62.87.0.0/17
 IP-CIDR,62.95.128.0/17
 IP-CIDR,62.100.0.0/18
@@ -973,7 +973,6 @@ IP-CIDR,188.192.0.0/14
 IP-CIDR,188.208.117.0/24
 IP-CIDR,188.208.118.0/23
 IP-CIDR,188.208.196.0/23
-IP-CIDR,188.211.228.0/22
 IP-CIDR,188.214.153.0/24
 IP-CIDR,188.214.154.0/24
 IP-CIDR,188.214.195.0/24
