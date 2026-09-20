@@ -1,11 +1,11 @@
 # NAME: exclude_ads
 # AUTHOR: efremych (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-09-19 08:14:28
+# UPDATED: 2026-09-20 08:31:14
 # SOURCE: https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/exclude_ads.txt
 # DOMAIN: 0
-# DOMAIN-SUFFIX: 8
-# TOTAL: 8
+# DOMAIN-SUFFIX: 9
+# TOTAL: 9
 
 DOMAIN-SUFFIX,ageverif.com
 DOMAIN-SUFFIX,antibot.wildberries.ru
@@ -15,3 +15,4 @@ DOMAIN-SUFFIX,mc.yandex.ru
 DOMAIN-SUFFIX,ndmdhs.com
 DOMAIN-SUFFIX,pub.network
 DOMAIN-SUFFIX,spac.me
+DOMAIN-SUFFIX,stat.arzamas.academy
