@@ -1,12 +1,12 @@
 # NAME: custom
 # AUTHOR: efremych (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-09-25 08:57:27
+# UPDATED: 2026-09-26 08:57:14
 # SOURCE: https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/custom.txt + https://raw.githubusercontent.com/efremych/mrs-rules/main/ip_cidr/custom.txt
 # DOMAIN: 0
-# DOMAIN-SUFFIX: 79
+# DOMAIN-SUFFIX: 80
 # IP-CIDR: 2
-# TOTAL: 81
+# TOTAL: 82
 
 DOMAIN-SUFFIX,4pda.ru
 DOMAIN-SUFFIX,4pda.to
@@ -44,6 +44,7 @@ DOMAIN-SUFFIX,kinozal.jumpingcrab.com
 DOMAIN-SUFFIX,kinozal.me
 DOMAIN-SUFFIX,kinozal.tv
 DOMAIN-SUFFIX,last.fm
+DOMAIN-SUFFIX,links.warp.dev
 DOMAIN-SUFFIX,meduza.io
 DOMAIN-SUFFIX,metacritic.com
 DOMAIN-SUFFIX,metahub.space
