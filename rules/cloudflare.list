@@ -1,7 +1,7 @@
 # NAME: cloudflare
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-10-26 08:51:02
+# UPDATED: 2026-10-27 09:03:49
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cloudflare.list + https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cloudflare.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 76
@@ -32,7 +32,6 @@ DOMAIN-SUFFIX,cloudflarebrowser.com
 DOMAIN-SUFFIX,cloudflarechallenge.com
 DOMAIN-SUFFIX,cloudflareclient.com
 DOMAIN-SUFFIX,cloudflarecp.com
-DOMAIN-SUFFIX,cloudflareinsights.com
 DOMAIN-SUFFIX,cloudflareok.com
 DOMAIN-SUFFIX,cloudflarepartners.com
 DOMAIN-SUFFIX,cloudflareportal.com
@@ -65,6 +64,7 @@ DOMAIN-SUFFIX,workers.dev
 DOMAIN-SUFFIX,cf-ipfs.com
 DOMAIN-SUFFIX,cloudflare-ipfs.com
 DOMAIN-SUFFIX,one.one.one
+DOMAIN-SUFFIX,cloudflareinsights.com
 DOMAIN-SUFFIX,cf-china.info
 DOMAIN-SUFFIX,cf-ns.com
 DOMAIN-SUFFIX,cf-ns.net
