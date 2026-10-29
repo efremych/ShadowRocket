@@ -1,12 +1,12 @@
 # NAME: fastly
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-10-28 09:42:07
+# UPDATED: 2026-10-29 09:49:34
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/fastly.list + https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/fastly.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 7
-# IP-CIDR: 91
-# TOTAL: 98
+# IP-CIDR: 96
+# TOTAL: 103
 
 DOMAIN-SUFFIX,fastly-edge.com
 DOMAIN-SUFFIX,fastly-terrarium.com
@@ -32,9 +32,14 @@ IP-CIDR,64.251.201.0/24
 IP-CIDR,66.43.1.0/24
 IP-CIDR,66.211.168.0/24
 IP-CIDR,85.236.106.0/24
-IP-CIDR,87.81.224.0/19
+IP-CIDR,87.81.224.0/20
+IP-CIDR,87.81.240.0/21
+IP-CIDR,87.81.248.0/22
+IP-CIDR,87.81.252.0/24
+IP-CIDR,87.81.254.0/23
 IP-CIDR,90.98.0.0/17
 IP-CIDR,90.98.128.0/18
+IP-CIDR,94.192.64.0/21
 IP-CIDR,103.244.50.0/24
 IP-CIDR,103.245.222.0/23
 IP-CIDR,103.245.224.0/24

@@ -1,12 +1,12 @@
 # NAME: custom
 # AUTHOR: efremych (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-10-28 09:42:06
+# UPDATED: 2026-10-29 09:49:33
 # SOURCE: https://raw.githubusercontent.com/efremych/mrs-rules/main/domain/custom.txt + https://raw.githubusercontent.com/efremych/mrs-rules/main/ip_cidr/custom.txt
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 81
-# IP-CIDR: 2
-# TOTAL: 83
+# IP-CIDR: 13
+# TOTAL: 94
 
 DOMAIN-SUFFIX,4pda.ru
 DOMAIN-SUFFIX,4pda.to
@@ -89,5 +89,16 @@ DOMAIN-SUFFIX,xhamster2.com
 DOMAIN-SUFFIX,xozilla.xxx
 DOMAIN-SUFFIX,xtits.xxx
 DOMAIN-SUFFIX,xvv1deos.com
+IP-CIDR,5.252.32.0/24
+IP-CIDR,5.252.33.0/24
+IP-CIDR,5.252.34.0/24
+IP-CIDR,5.252.35.0/24
 IP-CIDR,83.228.216.107/32
 IP-CIDR,83.228.216.111/32
+IP-CIDR,103.134.155.0/24
+IP-CIDR,160.25.253.0/24
+IP-CIDR,160.79.120.0/24
+IP-CIDR,160.79.121.0/24
+IP-CIDR,160.79.122.0/24
+IP-CIDR,160.79.123.0/24
+IP-CIDR,193.104.120.0/24
