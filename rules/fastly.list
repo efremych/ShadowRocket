@@ -1,7 +1,7 @@
 # NAME: fastly
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-10-29 09:49:34
+# UPDATED: 2026-10-30 09:53:04
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/fastly.list + https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/fastly.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 7
