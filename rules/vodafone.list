@@ -1,7 +1,7 @@
 # NAME: vodafone
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-11-07 09:53:12
+# UPDATED: 2026-11-08 09:59:57
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vodafone.list + https://github.com/toneywhitez/zkeen_rules/releases/latest/download/vodafone_ips.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 11
@@ -418,8 +418,8 @@ IP-CIDR,86.105.188.0/22
 IP-CIDR,86.105.200.0/22
 IP-CIDR,86.105.248.0/22
 IP-CIDR,86.106.32.0/19
-IP-CIDR,87.61.192.0/23
-IP-CIDR,87.61.194.0/24
+IP-CIDR,87.61.192.0/22
+IP-CIDR,87.61.196.0/24
 IP-CIDR,87.74.0.0/15
 IP-CIDR,87.76.146.0/24
 IP-CIDR,87.81.0.0/19
@@ -1650,9 +1650,9 @@ IP-CIDR,2402:3a80:4a40::/43
 IP-CIDR,2402:3a80:4a60::/44
 IP-CIDR,2402:3a80:4a80::/41
 IP-CIDR,2402:3a80:4b00::/40
-IP-CIDR,2402:3a80:4c00::/41
-IP-CIDR,2402:3a80:4c80::/42
-IP-CIDR,2402:3a80:4cc0::/43
+IP-CIDR,2402:3a80:4c00::/40
+IP-CIDR,2402:3a80:4d00::/41
+IP-CIDR,2402:3a80:4d80::/42
 IP-CIDR,2402:3a80:4ec0::/42
 IP-CIDR,2402:3a80:4f00::/42
 IP-CIDR,2402:3a80:5003::/48
