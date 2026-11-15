@@ -1,12 +1,12 @@
 # NAME: oracle
 # AUTHOR: MetaCubeX (converted by efremych)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-11-14 10:27:15
+# UPDATED: 2026-11-15 10:39:06
 # SOURCE: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/oracle.list + https://github.com/toneywhitez/zkeen_rules/releases/latest/download/oracle_ips.list
 # DOMAIN: 0
 # DOMAIN-SUFFIX: 19
-# IP-CIDR: 1721
-# TOTAL: 1740
+# IP-CIDR: 1725
+# TOTAL: 1744
 
 DOMAIN-SUFFIX,oracle
 DOMAIN-SUFFIX,java
@@ -28,6 +28,7 @@ DOMAIN-SUFFIX,ateam-oracle.com
 DOMAIN-SUFFIX,java.com
 DOMAIN-SUFFIX,java.net
 IP-CIDR,5.100.152.0/21
+IP-CIDR,5.144.81.0/24
 IP-CIDR,5.226.187.0/24
 IP-CIDR,23.91.64.0/20
 IP-CIDR,23.91.112.0/20
@@ -1100,9 +1101,8 @@ IP-CIDR,185.195.12.0/22
 IP-CIDR,185.208.36.0/22
 IP-CIDR,185.238.241.0/24
 IP-CIDR,188.95.91.0/24
-IP-CIDR,189.25.64.0/22
-IP-CIDR,189.25.68.0/23
-IP-CIDR,189.25.70.0/24
+IP-CIDR,189.25.64.0/21
+IP-CIDR,189.25.73.0/24
 IP-CIDR,192.9.128.0/18
 IP-CIDR,192.9.192.0/21
 IP-CIDR,192.9.200.0/23
@@ -1159,6 +1159,7 @@ IP-CIDR,194.165.37.0/24
 IP-CIDR,194.195.192.0/22
 IP-CIDR,194.195.196.0/24
 IP-CIDR,194.195.198.0/23
+IP-CIDR,194.233.151.0/24
 IP-CIDR,195.160.236.0/22
 IP-CIDR,196.15.22.0/24
 IP-CIDR,198.1.64.0/18
@@ -1394,6 +1395,9 @@ IP-CIDR,2602:fdd9::/36
 IP-CIDR,2602:fdeb:600::/47
 IP-CIDR,2602:fdeb:610::/47
 IP-CIDR,2602:fdeb:620::/47
+IP-CIDR,2602:fdeb:800::/47
+IP-CIDR,2602:fdeb:810::/47
+IP-CIDR,2602:fdeb:820::/47
 IP-CIDR,2602:fdeb:fe7::/48
 IP-CIDR,2602:fdeb:fe8::/46
 IP-CIDR,2602:fdeb:fec::/48
