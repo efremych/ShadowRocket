@@ -1,12 +1,12 @@
 # NAME: cdn_merged
 # AUTHOR: efremych (merged from multiple sources)
 # REPO: https://github.com/efremych/ShadowRocket
-# UPDATED: 2026-11-24 14:59:40
+# UPDATED: 2026-11-25 13:52:13
 # SOURCE: akamai, amazon, cdn77, cloudflare, digitalocean, fastly, hetzner, leaseweb, oracle, ovh, scaleway, vodafone, ASN DataWeb
-# DOMAIN: 464
+# DOMAIN: 466
 # IP-CIDR: 14230
 # IP-ASN: 1
-# TOTAL: 14695
+# TOTAL: 14697
 
 # ===== DOMAINS =====
 DOMAIN,d1v5ir2lpwr8os.cloudfront.net
@@ -343,10 +343,12 @@ DOMAIN-SUFFIX,elasticbeanstalk.com
 DOMAIN-SUFFIX,encryptedsni.com
 DOMAIN-SUFFIX,every1dns.net
 DOMAIN-SUFFIX,fastly-edge.com
+DOMAIN-SUFFIX,fastly-insights.com
 DOMAIN-SUFFIX,fastly-terrarium.com
 DOMAIN-SUFFIX,fastly.com
 DOMAIN-SUFFIX,fastly.io
 DOMAIN-SUFFIX,fastly.net
+DOMAIN-SUFFIX,fastlydns.net
 DOMAIN-SUFFIX,fastlylabs.com
 DOMAIN-SUFFIX,fastlylb.net
 DOMAIN-SUFFIX,first-ns.de
